@@ -12,15 +12,14 @@ version = "1.2.1~ynh1"
 maintainers = ["eric_G"]
 
 [upstream]
-license = "free" # you can see the available licenses identifiers list here: https://spdx.org/licenses/
-website = "https://example.com"
-demo = "https://demo.example.com"
+license = "CC-BY-SA-4.0"
+website = "https://robertmanager.org/"
+demo = "https://robertmanager.org/try#try-public"
 admindoc = "https://robertmanager.org/wiki/install"
-userdoc = "https://yunohost.org/apps"
-code = "https://some.forge.com/example/example"
+code = "https://github.com/Loxya/Loxya"
 
 [integration]
-yunohost = ">= 12.0.9"
+yunohost = ">= 12.1.17"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
@@ -44,21 +43,6 @@ ram.runtime = "50M"
     type = "group"
     default = "visitors"
 
-    [install.language]
-    ask.en = "Choose the application language"
-    ask.fr = "Choisissez la langue de l'application"
-    type = "select"
-    choices = ["fr", "en"]
-    default = "fr"
-
-    [install.admin]
-    type = "user"
-
-    [install.password]
-    help.en = "Use the help field to add an information for the admin about this question."
-    help.fr = "Utilisez le champ aide pour ajouter une information à l'intention de l'administrateur à propos de cette question."
-    type = "password"
-
 [resources]
 
     [resources.sources]
@@ -74,7 +58,7 @@ ram.runtime = "50M"
     [resources.install_dir]
     group = "www-data:r-x"
     
-    [resources.data_dir]
+    #[resources.data_dir]
 
     [resources.permissions]
     main.url = "/"
