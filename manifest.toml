@@ -66,7 +66,7 @@ ram.runtime = "50M"
     [resources.ports]
 
     [resources.apt]
-    packages = "mariadb-server, php8.3-bcmath, php8.3-curl, php8.3-dom, php8.3-fileinfo, php8.3-gettext, php8.3-iconv, php8.3-intl, php8.3-mbstring, php8.3-pcre, php8.3-pdo, php8.3-pdo_mysql, php8.3-openssl, php8.3-xml"
+    packages = "mariadb-server, php8.3-bcmath, php8.3-curl, php8.3-dom, php8.3-fileinfo, php8.3-gettext, php8.3-iconv, php8.3-intl, php8.3-mbstring, php8.3-pcre, php8.3-pdo, php8.3-mysql, php8.3-openssl, php8.3-xml"
 
     [resources.database]
     type = "mysql"
