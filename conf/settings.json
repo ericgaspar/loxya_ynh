@@ -1,0 +1,188 @@
+
+    "baseUrl": "https://__DOMAIN____PATH__",
+    "enableCORS": false,
+    "displayErrorDetails": false,
+    "useRouterCache": true,
+    "JWTSecret": "super_long_secret_string_to_never_commit",
+    "httpAuthHeader": "Authorization",
+    "sessionExpireHours": 12,
+    "maxItemsPerPage": 100,
+    "maxFetchPeriod": 90,
+    "maxConcurrentFetches": 2,
+    "defaultLang": "fr",
+    "returnPolicy": "auto",
+    "billingMode": "partial",
+    "healthcheck": true,
+    "features": {
+        "technicians": true
+    },
+    "db": {
+        "host": "localhost",
+        "port": 3306,
+        "database": "__DB_NAME__",
+        "username": "__DB_USER__",
+        "password": "__DB_PWD__",
+        "prefix": ""
+    },
+    "companyData": {
+        "logo": "votre_logo.jpg",
+        "name": "Votre société",
+        "phone": "+33 (0)1 23 45 67 89",
+        "email": "contact@your-company.com",
+        "website": "https://your-company.com",
+        "street": "32, rue du matoss",
+        "zipCode": "75000",
+        "locality": "Paris",
+        "country": "France",
+        "vatNumber": "FR78945612300",
+        "legalNumbers": [
+            {
+                "name": "SIRET",
+                "value": "123 456 789 00001"
+            },
+            {
+                "name": "APE",
+                "value": "947A"
+            }
+        ]
+    },
+    "proxy": {
+        "enabled": false,
+        "host": "proxy.loxya.test",
+        "port": 3128
+    },
+    "colorSwatches": [
+        "#f5006b",
+        "#06b5a9",
+        "#f8ad14",
+        "#9fde3f",
+        "#ff6e21"
+    ],
+    "logger": {
+        "timezone": "Europe/Paris",
+        "level": 200,
+        "max_files": 5
+    },
+    "maxFileUploadSize": 26214400,
+    "authorizedFileTypes": ["application/pdf", "application/zip", "text/csv", "..."],
+    "authorizedImageTypes": ["image/jpeg", "image/png", "image/webp", "..."],
+    "email": {
+        "from": {
+            "email": "noreply@example.com",
+            "name": "Notification Loxya"
+        },
+        "driver": "mail",
+        "smtp": {
+            "host": "localhost",
+            "port": 1025,
+            "username": null,
+            "password": null,
+            "security": ""
+        },
+        "mailjet": {
+            "apiKey": "mailjet-api-key",
+            "apiSecretKey": "mailjet-api-secret"
+        }
+    },
+
+    //////////////////////////////////////////////////
+    // La suite est spécifique à la variante Premium :
+    //////////////////////////////////////////////////
+
+    "enableApiDocs": true,
+    "handScanner": {
+        "scanTimeout": 100,
+        "inputLayout": "azerty"
+    },
+    "exports": {
+        "materials": {
+            "advanced": true
+        }
+    },
+    "auth": {
+        "cookie": "auth",
+        "inactivityWatcher": {
+            "enabled": false,
+            "threshold": 3,
+        },
+        "CAS": {
+            "enabled": false,
+            "host": "cas.loxya.dev",
+            "port": 8080,
+            "uri": "/cas",
+            "cert": false,
+            "attributes": {
+                "pseudo": "givenName",
+                "email": ["mail", "email"],
+                "firstName": "first_name",
+                "lastName": "last_name",
+                "group": "group"
+            },
+            "beneficiaryGroups": "*",
+            "groupsMapping": {
+                "Administrateur": "administration",
+                "MonGroupeBeneficiaireCAS": "external"
+            },
+            "defaultGroup": "external",
+            "nonCASUserLinking": true
+        },
+        "SAML2": {
+            "enabled": false,
+            "signRequests": false,
+            "signingCert": {
+                "key": null,
+                "cert": null
+            },
+            "idp": {
+                "entityId": null,
+                "singleSignOnServiceUrl": null,
+                "singleLogoutServiceUrl": null,
+                "signingCert": null
+            },
+            "attributes": {
+                "pseudo": "givenName",
+                "email": ["mail", "email"],
+                "firstName": "first_name",
+                "lastName": "last_name",
+                "group": "group"
+            },
+            "beneficiaryGroups": "*",
+            "groupsMapping": {
+                "Administrateur": "administration",
+                "MonGroupeBeneficiaireCAS": "external"
+            },
+            "defaultGroup": "external",
+            "nonSAMLUserLinking": true,
+            "disableUnsolicitedRequests": false,
+            "proxyVars": false
+        }
+    },
+    "signup": {
+        "restrictedEmailDomains": ["my-company.com", "other.org"],
+        "expireAfter": 120,
+        "requireAddress": "auto",
+        "allowCompanies": true,
+        "maxRegistrationBeforeCooldown": 2
+    },
+    "legalDocuments": {
+        "privacyPolicy": null,
+        "termsOfUse": null,
+    },
+    "notifications": {
+        "overdue": {
+            "enabled": true,
+            "days": [1, 15, 22, 27, 30],
+            "lookBackMaxMonths": 2,
+            "events": {
+                "enabled": true
+            },
+            "reservations": {
+                "enabled": true
+            }
+        },
+        "preparers": {
+            "enabled": true,
+            "daysBefore": 1
+        }
+    }
+}
